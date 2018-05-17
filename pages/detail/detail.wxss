@@ -1,0 +1,51 @@
+/* pages/detail/detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+
+.titleWrapper {
+  display: flex;
+  color: black;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  font-weight: bold;
+  padding-top: 70rpx;
+  height: 70rpx;
+  border-bottom: 2rpx solid #6495ed;
+}
+
+.titleIcon {
+  margin: 0 25rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.newsDetailWrapper {
+  margin: 30px 20px;
+}
+
+.newsTitle {
+  font-size: 40rpx;
+  line-height: 56rpx;
+}
+
+.newsBasicInfo {
+  margin-top: 20rpx;
+  display: flex;
+  font-size: 25rpx;
+  line-height: 35rpx;
+  opacity: 0.5;
+}
+
+.newsTime {
+  margin-left: 20rpx;
+}
+
+.newsReadCount {
+  text-align: right;
+  flex-grow: 1
+}
+
+.newsContent {
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}

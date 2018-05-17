@@ -1,0 +1,20 @@
+  
+  <import src="../../wxParse/wxParse.wxml"/>
+  
+  <view class="titleWrapper" bindtap='returnHome'>
+    <image class="titleIcon" src="/images/rarrow.jpg"></image>
+    <view>快读.资讯</view>
+  </view>
+  
+  <!-- 新闻详情 -->
+  <view class="newsDetailWrapper">
+    <view class="newsTitle">{{newsDetail.title}}</view>
+    <view class="newsBasicInfo">
+      <view class="newsSource">{{newsDetail.source}}</view>
+      <view class="newsTime">{{newsDetail.time}}</view>
+      <view class="newsReadCount">{{newsDetail.readCount}}</view>
+    </view>
+    <view class="newsContent">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>

@@ -1,4 +1,25 @@
 <!--index.wxml-->
-<view>
- Hello World!
+<view class="topWrapper">
+  <view class="titleWrapper">
+    <image class="titleIcon" src="/images/timg.jpg"></image>
+    <view>快读.资讯</view>
+  </view>
+  <!-- 导航栏 -->
+  <view class="navWrapper">
+    <view wx:for="{{newsTypesText}}">
+       <view wx:if="{{curNewsType != index}}" class="navItem" data-newstype="{{index}}" bindtap='selectNewsType'>{{item}}</view>
+       <view wx:if="{{curNewsType == index}}" class="navItemSelected">{{item}}</view>
+    </view>
+  </view>
+  <!-- 新闻列表 -->
+  <view class="newsWrapper" wx:for="{{hotNewsList}}" data-id="{{item.id}}" bindtap="showNewsDetail">
+    <view class="newsBasicInfo">
+      <view class="newsTitle">{{item.title}}</view>
+      <view class="newsSourceAndTime">
+        <view class="newsSource">{{item.source}}</view>
+        <view class="newsTime">{{item.time}}</view>
+      </view>
+    </view>
+    <image class="newsImage" src="{{item.imagePath}}"></image>
+  </view>
 </view>
