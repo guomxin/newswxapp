@@ -11,24 +11,25 @@
        <view wx:if="{{curNewsType == index}}" class="navItemSelected">{{item}}</view>
     </view>
   </view>
-  <!-- 新闻头条 -->
-  <view class="newsHeadline">
-     <view class="headNewsTitle">官湖村陈生：上北大车票是乡亲凑的，增别墅遇尴尬两年没回乡</view>
-     <view class="headNewsSourceAndTime">
-        <view class="headNewsSource">上游新闻</view>
-        <view class="headNewsTime">10:22</view>
-      </view>
-     <image class="news-bg" src="/images/timg.jpg" mode="scaleToFill"></image>
-  </view>
-  <!-- 新闻列表 -->
-  <view class="newsWrapper" wx:for="{{hotNewsList}}" data-id="{{item.id}}" bindtap="showNewsDetail">
-    <view class="newsBasicInfo">
-      <view class="newsTitle">{{item.title}}</view>
-      <view class="newsSourceAndTime">
-        <view class="newsSource">{{item.source}}</view>
-        <view class="newsTime">{{item.time}}</view>
-      </view>
-    </view>
-    <image class="newsImage" src="{{item.imagePath}}"></image>
-  </view>
 </view>
+<!-- 新闻头条 -->
+<view class="newsHeadline" data-id="{{headlineNews.id}}" bindtap="showNewsDetail">
+    <view class="headNewsTitle">{{headlineNews.title}}</view>
+    <view class="headNewsSourceAndTime">
+      <view class="headNewsSource">{{headlineNews.source}}</view>
+      <view>{{headlineNews.time}}</view>
+    </view>
+    <image class="news-bg" src="{{headlineNews.imagePath}}" mode="scaleToFill"></image>
+</view>
+<!-- 新闻列表 -->
+<view class="newsWrapper" wx:for="{{hotNewsList}}" data-id="{{item.id}}" bindtap="showNewsDetail">
+  <view class="newsBasicInfo">
+    <view class="newsTitle">{{item.title}}</view>
+    <view class="newsSourceAndTime">
+      <view class="newsSource">{{item.source}}</view>
+      <view>{{item.time}}</view>
+    </view>
+  </view>
+  <image class="newsImage" src="{{item.imagePath}}"></image>
+</view>
+
